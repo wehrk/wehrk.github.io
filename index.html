@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-	
+
 <head>
 <style>
 	
@@ -9,22 +9,30 @@ a:link {
   background-color: transparent;
   text-decoration: none;
 }
+
+a:visited {
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+}
 	
 a:hover {
   color: black;
-  background-color: transparent;
+  background-color: black;
   text-decoration: underline;
 }
 	
 a:active {
-  color: blue;
+  color: white;
   background-color: transparent;
   text-decoration: underline;
 }
-	
-p.a {
+
+.text {
 	font-size:14px;
 	font-family: "Times New Roman", Times, serif;
+    margin: 30px;
+    background-color: white;
 }
 
 </style>
@@ -32,23 +40,27 @@ p.a {
 	
 <body>
 
-<p class ="a">
+<div class ="text">
 
+<p>
 blahblahblah <a href="https://wehrk.bandcamp.com" target="_blank">link</a>
 <br>
 <a href="glossary.html"><ins>glossary</ins></a>
-
 </p>
 
+<p>
 <iframe style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/album=243865507/size=small/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless><a href="https://dianaromanova.bandcamp.com/album/excercice-d-coute-non-humaine">Excercice d&#39;écoute non-humaine by Diana Romanova</a></iframe>
+</p>
 
 <hr> <!-- horizotnal rule -->
 
-<p class ="a">
+<p>
 this is a <br> <!-- line break inside a paragraph -->
 line break
 
 </p>
+
+</div>
 
 </body>
 </html>
