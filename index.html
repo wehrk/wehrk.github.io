@@ -1,11 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>nth</title>
+
 <style>
-	
+
+/* collapsibles */
+
+.collapsible {
+  background-color: #000;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 700px;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 12px;
+}
+
+.active, .collapsible:hover {
+  background-color: #0000A6;
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 0px;
+}
+
+.content {
+  padding: 0 0px;
+  width: 700px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.1s ease-out;
+  background-color: black;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+/* links */
+
 a:link {
   color: black;
   background-color: transparent;
@@ -13,11 +55,11 @@ a:link {
 }
 
 a:visited {
-  color: black;
-  background-color: transparent;
-  text-decoration: none;
+ 	 color: black;
+ 	 background-color: transparent;
+ 	 text-decoration: none;
 }
-	
+
 a:hover {
   color: black;
   background-color: black;
@@ -30,12 +72,29 @@ a:active {
   text-decoration: none;
 }
 
+/* vimeo embed */
+
+.vimeo {
+	style="position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;" 
+    frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
+
+
+}
+
+/* text */
+
 .text {
-    font-size: 2vw;
+    font-size: 100%;
     font-family: "Times New Roman", Times, serif;
     margin: 40px;
     background-color: white;
 }
+
+/* horizontal lines */
 
 hr {
 	border: 8px solid black;
@@ -45,14 +104,18 @@ hr {
     border-left: 0;
 }
 
+/* paragraph hover */
+
 p:hover {
     	color: black;
         background-color: black;
 	}
 
+/* responsive */
+
 @media screen and (max-width: 800px) {
   .left, .main, .right {
-    width: 130%; /* The width is 100%, when the viewport is 400px or smaller */
+    width: 130%; /* The width is 130%, when the viewport is 800px or smaller */
   }
   .text { 
   font-size: 5vw;
@@ -60,6 +123,20 @@ p:hover {
   }
   hr {
   width: 100%;
+  }
+  .content {
+  width: 100%;
+  }
+  .collapsible {
+  background-color: #000;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 12px;
   }
 }
 
@@ -94,10 +171,34 @@ line break
 	<a href="/js/"><ins>smth</ins></a>,
     <a href="/jquery/"><ins>smth</ins></a>
 </nav>
+
 <br>
-<div style="padding:177.78% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/793656468?h=6469b2179f&color=0000A6&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+
+<button class="collapsible">01_10</button>
+<div class="content">
+
+<div style="padding:177.78% 0 0 0;position:relative;">
+
+<iframe src="https://player.vimeo.com/video/793656468?h=6469b2179f&color=0000A6&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:700px;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+</div>
 
 </div>
 
-</body>
-</html>
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+
+
