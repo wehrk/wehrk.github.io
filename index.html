@@ -30,21 +30,22 @@ a:active {
 }
 
 .text {
-    font-size:14px;
+    font-size: 85%;
     font-family: "Times New Roman", Times, serif;
-    margin: 30px;
+    margin: 40px;
     background-color: white;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 400px) {
   .left, .main, .right {
-    width: 100%; /* The width is 100%, when the viewport is 700px or smaller */
+    width: 130%; /* The width is 100%, when the viewport is 700px or smaller */
   }
+  .text { 
+  	font-size: 100%
 }
 
 hr {
   border-top: 1px solid black;
-  border-radius: 0px;
   width: 700px;
   align: "left";
   margin-left: 0;
@@ -55,12 +56,12 @@ hr {
 	
 <body>
 
-<div class ="text">
+<div class="text">
 
 <p>
-blahblahblah <a href="https://wehrk.bandcamp.com" target="_blank">link</a>
+blahblahblah <a href="https://wehrk.bandcamp.com" target="_blank"><ins>link</ins></a>
 <br>
-<a href="glossary.html"><ins>glossary</ins></a>
+line
 </p>
 
 <p>
@@ -76,10 +77,10 @@ line break
 </p>
 	
 <nav>
-  <a href="glossary.html"><ins>glossary</ins></a> |
-  <a href="/html/">visual</a> |
-  <a href="/js/">smth</a> |
-  <a href="/jquery/">smth</a>
+	<a href="glossary.html"><ins>glossary</ins></a>,
+	<a href="/html/"><ins>visual</ins></a>,
+	<a href="/js/"><ins>smth</ins></a>,
+    <a href="/jquery/"><ins>smth</ins></a>
 </nav>
 
 </div>
