@@ -36,19 +36,29 @@ a:active {
     background-color: white;
 }
 
-@media screen and (max-width: 400px) {
-  .left, .main, .right {
-    width: 130%; /* The width is 100%, when the viewport is 700px or smaller */
-  }
-  .text { 
-  	font-size: 100%
+hr {
+	border: 8px solid black;
+    width: 700px;
+    margin-left: 0;
+    border-right: 0;
+    border-left: 0;
 }
 
-hr {
-  border-top: 1px solid black;
-  width: 700px;
-  align: "left";
-  margin-left: 0;
+p:hover {
+    	color: black;
+        background-color: black;
+	}
+
+@media screen and (max-width: 800px) {
+  .left, .main, .right {
+    width: 130%; /* The width is 100%, when the viewport is 400px or smaller */
+  }
+  .text { 
+  font-size: 100%;
+  }
+  hr {
+  width: 100%;
+  }
 }
 
 </style>
