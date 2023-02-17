@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8/">
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>nth</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&family=Raleway:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&family=Space+Mono:ital@0;1&display=swap" rel="stylesheet">
+
 <style>
 
 /* centered div */
@@ -14,22 +21,25 @@
 /* paragraph */
 
 p {
-  font-size: 100%;
-  font-family: "Times New Roman", Times, serif;
-  width: 700px;
-  margin: auto;
-  background-color: white;
+  	font-size: 100%;
+  	/*font-family: "Times New Roman", Times, serif;*/
+	font-family: 'Raleway', sans-serif;
+	font-weight: 300;
+  	width: 700px;
+  	margin: auto;
+  	background-color: white;
 }
 
 /* text outside foldable containers */
 
 .text {
 	font-size: 100%;
-    font-family: "Times New Roman", Times, serif;
-    word-wrap: normal;
-    width: 700px;
-    margin: auto;
-    background-color: white;
+    	/*font-family: "Times New Roman", Times, serif;*/
+	font-family: Raleway, Thin, sans serif;
+	word-wrap: normal;
+   	width: 700px;
+   	margin: auto;
+   	background-color: white;
 }
 
 /* paragraph hover effect */
@@ -45,48 +55,53 @@ p:hover {
 
 hr {
 	border: 8px solid black;
-    width: 100%;
-    margin-left: 0;
-    border-right: 0;
-    border-left: 0;
+  	width: 700px;
+  	margin: auto;
+	margin-left: 0;
+	border-right: 0;
+	border-left: 0;
 }
 
 /* collapsibles */
 
 .collapsible {
-  background-color: #000;
-  color: white;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 12px;
+	/* to do: display: flex; */
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 300;
+	background-color: #000;
+	color: white;
+	cursor: pointer;
+	margin: 1px;
+	padding: 20px;
+	width: 100%;
+	border: none;
+	text-align: left;
+  	outline: none;
+  	font-size: 14px;
 }
 
 .active, .collapsible:hover {
-  background-color: #0000A6;
+ 	 background-color: #0000A6;
 }
 
 .collapsible:after {
-  content: '\002B';
-  color: white;
-  font-weight: bold;
-  float: right;
-  margin-left: 0px;
+  	content: '\002B';
+  	color: white;
+  	font-weight: bold;
+  	float: right;
+  	margin-left: 0px;
 }
 
 .active:after {
-  content: "\2212";
+  	content: "\2212";
 }
 
 .content {
-  padding: 0 0px;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease-out;
-  background-color: black;
+  	padding: 0 0px;
+  	max-height: 0;
+  	overflow: hidden;
+  	transition: max-height 0.3s ease-out;
+  	background-color: black;
 }
 
 /* links */
@@ -98,70 +113,80 @@ a:link {
 }
 
 a:visited {
- 	 color: black;
- 	 background-color: transparent;
- 	 text-decoration: none;
+ 	color: black;
+ 	background-color: transparent;
+ 	text-decoration: none;
 }
 
 a:hover {
-  color: black;
-  background-color: black;
-  text-decoration: none;
+  	color: black;
+  	background-color: black;
+  	text-decoration: none;
 }
 	
 a:active {
-  color: white;
-  background-color: transparent;
-  text-decoration: none;
+ 	color: white;
+  	background-color: #0000A6;
+  	text-decoration: none;
+}
+
+nav {
+	/*font-family: "Times New Roman", Times, serif;*/
+	/*font-family: Raleway, Thin, sans serif;*/
+	font-family: 'Space Mono', monospace;
+  	font-size: 90%;
+  	margin: 0px;
 }
 
 /* vertical screen device */
 
 @media screen and (max-width: 750px) {
   .left, .main, .right {
-    width: 100%; /* The width is 130%, when the viewport is 700px or smaller */
+    	width: 100%; /* The width is 130%, when the viewport is 700px or smaller */
   }
   .centered {
 	width: 100%;
 	margin: 0;
   }
   body {   
-    margin: 0 auto;
+    	margin: 0 auto;
   }
   .text {
 	font-size: 4.5vw;
-    font-family: "Times New Roman", Times, serif;
-    word-wrap: normal;
-    width: 100%;
-    margin: auto;
-    background-color: white;
+    	font-family: "Times New Roman", Times, serif;
+    	word-wrap: normal;
+    	width: 100%;
+    	margin: auto;
+    	background-color: white;
   }
   p { 
-  font-size: 4.5vw;
-  margin: 6px;
-  width: 100%;
+  	font-size: 4.5vw;
+  	margin: 6px;
+ 	width: 100%;
   }
   nav {
-  font-size: 4.5vw;
-  margin: 6px;
+	/*font-family: "Times New Roman", Times, serif;*/
+	font-family: Raleway, Thin, sans serif;
+  	font-size: 4.5vw;
+  	margin: 6px;
   }
   hr {
-  width: 100%;
+  	width: 100%;
   }
   .content {
-  width: 100%;
+  	width: 100%;
   }
   .collapsible {
-  background-color: #000;
-  color: white;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 3vw;
-  }
+  	background-color: #000;
+  	color: white;
+  	cursor: pointer;
+  	padding: 18px;
+  	width: 100%;
+  	border: none;
+  	text-align: left;
+  	outline: none;
+  	font-size: 3vw;
+}
 }
 
 </style>
@@ -171,12 +196,16 @@ a:active {
 <div class="centered">
 
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-<button class="collapsible">01_10</button>
+<button class="collapsible";>0</button>
 <div class="content">
 <div style="padding:177.78% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/793656468?h=6469b2179f&color=0000A6&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 
 </div>
 
+<button class="collapsible">1</button>
+<div class="content">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
 <button class="collapsible">2</button>
 <div class="content">
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -186,6 +215,18 @@ a:active {
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 </div>
 <button class="collapsible">4</button>
+<div class="content">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+<button class="collapsible">5</button>
+<div class="content">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+<button class="collapsible">6</button>
+<div class="content">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+<button class="collapsible">7</button>
 <div class="content">
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 </div>
