@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,7 +34,10 @@ p {
 img {
   	width: 350px;
   	height: 350px;
-  	object-fit: cover;
+	object-fit: cover;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
 }
 
 /* text outside foldable containers */
@@ -62,7 +64,7 @@ p:hover {
 /* horizontal lines */
 
 hr {
-	border: 8px solid black;
+	border: 8px solid #0000A6;
   	width: 700px;
   	margin: auto;
 	margin-left: 0;
@@ -120,7 +122,9 @@ hr {
   	padding: 0px 0px 0px 0px;
 	display: flex;
 	flex-wrap: wrap;
+	align-content: flex-start;
 	align-items: flex-start;
+	gap: 5px;
   	max-height: 0;
   	overflow: hidden;
   	transition: max-height 0.3s ease-out;
@@ -133,7 +137,7 @@ hr {
 	font-family: 'Raleway', sans-serif;
 	/*font-family: 'Montserrat', sans-serif;*/
 	font-weight: 300;
-  	width: 350px;
+  	width: 345px;
   	margin: auto;
   	background-color: white;
 }
@@ -202,6 +206,10 @@ nav {
 	padding: 0px 0px 0px  0px ;
  	width: 100%;
   }
+img {
+	width: 100%;
+	object-fit: cover;
+}
   nav {
 	/*font-family: "Times New Roman", Times, serif;*/
 	font-family: Raleway, Thin, sans serif;
@@ -212,10 +220,31 @@ nav {
   hr {
   	width: 100%;
   }
+	.fold1 {
+		width: 100%;
+  		padding: 0px 0px 0px 0px;
+		display: flex;
+		flex-wrap: wrap;
+		align-content: flex-start;
+		align-items: flex-start;
+  		max-height: 0;
+  		overflow: hidden;
+  		transition: max-height 0.3s ease-out;
+  		background-color: white;
+	}
+
+	.fold1_txt {
+		width: 100%;
+  		font-size: 4.5vw;
+  		/*font-family: "Times New Roman", Times, serif;*/
+		font-family: 'Raleway', sans-serif;
+		/*font-family: 'Montserrat', sans-serif;*/
+		font-weight: 300;
+  		width: 350px;
+  		margin: auto;
+  		background-color: white;
+	}
   .content {
-  	width: 100%;
-  }
-  .content_0 {
   	width: 100%;
   }
   .collapsible {
@@ -245,11 +274,11 @@ nav {
 <button class="collapsible";>0</button>
 <div class="fold1">
 
-<img src="img/img2.png" alt="src" width="350" height="350">
+<img src="img/img2.png" alt="src">
 
-<p class="fold1_txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<p class="fold1_txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 
-<iframe style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/album=243865507/size=small/bgcol=ffffff/linkcol=333333/artwork=none/track=3265095041/transparent=true/" seamless><a href="https://dianaromanova.bandcamp.com/album/excercice-d-coute-non-humaine">Excercice d&#39;écoute non-humaine by Diana Romanova</a></iframe>
+<iframe style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/album=3165089018/size=small/bgcol=ffffff/linkcol=333333/artwork=none/track=469333186/transparent=true/" seamless><a href="https://berndschurer.bandcamp.com/album/parallax">Parallax by Bernd Schurer</a></iframe>
 
 <hr>
 </div>
