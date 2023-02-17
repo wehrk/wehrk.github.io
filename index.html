@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +19,7 @@
 	margin: auto;
 }
 
-/* paragraph */
+/* basics */
 
 p {
   	font-size: 100%;
@@ -31,13 +32,13 @@ p {
   	background-color: white;
 }
 
-img {
-  	width: 350px;
-  	height: 350px;
-	object-fit: cover;
-	margin: 0px 0px 0px 0px;
-	padding: 0px 0px 0px 0px;
-}
+nav {
+	/*font-family: "Times New Roman", Times, serif;*/
+	/*font-family: Raleway, Thin, sans serif;*/
+	font-family: 'Space Mono', monospace;
+  	font-size: 90%;
+	width: 700px;
+  	margin: 0px;
 }
 
 /* text outside foldable containers */
@@ -106,24 +107,15 @@ hr {
   	content: "\2212";
 }
 
-/* collapsibles contents */
+/* fold 1 content */
 
-.content {
-  	padding: 0px 0px 0px 0px;
-  	max-height: 0;
-  	overflow: hidden;
-  	transition: max-height 0.3s ease-out;
-  	background-color: white;
-}
-
-/* fold 1 */
-
-.fold1 {
-  	padding: 0px 0px 0px 0px;
+.fold_container_01 {
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: flex-start;
 	align-content: flex-start;
 	align-items: flex-start;
+	margin: 0px;
 	gap: 5px;
   	max-height: 0;
   	overflow: hidden;
@@ -131,14 +123,46 @@ hr {
   	background-color: white;
 }
 
-.fold1_txt {
-  	font-size: 100%;
+.fold_container_01 > div {
+	margin: 0px;
+}
+
+.fold_img_01 {  
+	display: flex;
+	width: 345px;
+  	height: 345px;
+	object-fit: none;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+.fold_txt_01 {
+	width: 345px;
+	height: 345px;
+  	font-size: 90%;
   	/*font-family: "Times New Roman", Times, serif;*/
 	font-family: 'Raleway', sans-serif;
 	/*font-family: 'Montserrat', sans-serif;*/
+	margin: 0px 0px 0px 0px;
+	padding: 5px 0px 0px 0px;
 	font-weight: 300;
-  	width: 345px;
-  	margin: auto;
+	word-wrap: break-word;
+  	background-color: white;
+}
+
+.fold_player_01 {
+	border: 0; 
+	width: 700px;
+	height: 42px;
+}
+
+/* other collapsibles temporary content */
+
+.content {
+  	padding: 0px 0px 0px 0px;
+  	max-height: 0;
+  	overflow: hidden;
+  	transition: max-height 0.3s ease-out;
   	background-color: white;
 }
 
@@ -166,15 +190,6 @@ a:active {
  	color: white;
   	background-color: #0000A6;
   	text-decoration: none;
-}
-
-nav {
-	/*font-family: "Times New Roman", Times, serif;*/
-	/*font-family: Raleway, Thin, sans serif;*/
-	font-family: 'Space Mono', monospace;
-  	font-size: 90%;
-	width: 700px;
-  	margin: 0px;
 }
 
 /* vertical screen device */
@@ -236,6 +251,7 @@ img {
 	.fold1_txt {
 		width: 100%;
   		font-size: 4.5vw;
+		word-wrap: break-word;
   		/*font-family: "Times New Roman", Times, serif;*/
 		font-family: 'Raleway', sans-serif;
 		/*font-family: 'Montserrat', sans-serif;*/
@@ -272,14 +288,19 @@ img {
 </div>
 
 <button class="collapsible";>0</button>
-<div class="fold1">
+<div class="fold_container_01">
 
+<div class="fold_img_01">
 <img src="img/img2.png" alt="src">
+</div>
 
-<p class="fold1_txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<div>
+<p class="fold_txt_01">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
 
-<iframe style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/album=3165089018/size=small/bgcol=ffffff/linkcol=333333/artwork=none/track=469333186/transparent=true/" seamless><a href="https://berndschurer.bandcamp.com/album/parallax">Parallax by Bernd Schurer</a></iframe>
-
+<div>
+<iframe class="fold_player_01" src="https://bandcamp.com/EmbeddedPlayer/album=3165089018/size=small/bgcol=ffffff/linkcol=333333/artwork=none/track=469333186/transparent=true/" seamless><a href="https://berndschurer.bandcamp.com/album/parallax">Parallax by Bernd Schurer</a></iframe>
+</div>
 <hr>
 </div>
 
