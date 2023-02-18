@@ -6,9 +6,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>nth</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&family=Raleway:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&family=Space+Mono:ital@0;1&display=swap" rel="stylesheet">
+<!-- google fonts api --> 
+<link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&family=Mulish:ital,wght@0,200;1,200&family=Quicksand:wght@300;400;500&family=Raleway:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&family=Space+Mono:ital@0;1&display=swap" rel="stylesheet">
+
+<!-- css rules to specify font families:
+font-family: 'Montserrat', sans-serif;
+font-family: 'Mulish', sans-serif;
+font-family: 'Quicksand', sans-serif;
+font-family: 'Raleway', sans-serif;
+font-family: 'Source Code Pro', monospace;
+font-family: 'Space Mono', monospace;
+-->
 
 <style>
 
@@ -20,6 +30,11 @@
 }
 
 /* basics */
+
+body {
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
 
 p {
   	font-size: 100%;
@@ -37,6 +52,7 @@ nav {
 	/*font-family: Raleway, Thin, sans serif;*/
 	font-family: 'Space Mono', monospace;
   	font-size: 90%;
+	word-spacing: -7px;
 	width: 700px;
   	margin: 0px;
 }
@@ -83,12 +99,12 @@ hr {
 	color: white;
 	cursor: pointer;
 	margin: 0px;
-	padding: 15px;
+	padding: 19px;
 	width: 100%;
 	border: none;
 	text-align: left;
   	outline: none;
-  	font-size: 14px;
+  	font-size: 17px;
 }
 
 .active, .collapsible:hover {
@@ -109,7 +125,7 @@ hr {
 
 /* fold 1 content */
 
-.fold_container_01 {
+.folder_container_1 {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: flex-start;
@@ -123,11 +139,11 @@ hr {
   	background-color: white;
 }
 
-.fold_container_01 > div {
+.folder_container_1 > div {
 	margin: 0px;
 }
 
-.fold_img_01 {  
+.folder_img_1 {  
 	display: flex;
 	width: 345px;
   	height: 345px;
@@ -136,24 +152,48 @@ hr {
 	padding: 0px 0px 0px 0px;
 }
 
-.fold_txt_01 {
-	width: 345px;
+.folder_txt_side_1 {
+	width: 325px;
 	height: 345px;
-  	font-size: 90%;
+  	font-size: 80%;
   	/*font-family: "Times New Roman", Times, serif;*/
-	font-family: 'Raleway', sans-serif;
+	/*font-family: 'Raleway', sans-serif;*/
 	/*font-family: 'Montserrat', sans-serif;*/
+	/*font-family: 'Mulish', sans-serif;*/
+	font-family: 'Quicksand', sans-serif;
 	margin: 0px 0px 0px 0px;
-	padding: 5px 0px 0px 0px;
+	padding: 15px 15px 0px 10px;
 	font-weight: 300;
 	word-wrap: break-word;
   	background-color: white;
 }
 
-.fold_player_01 {
+.folder_txt_main_1 {
+	width: 325px;
+	height: 172.5px;
+  	font-size: 80%;
+  	/*font-family: "Times New Roman", Times, serif;*/
+	/*font-family: 'Raleway', sans-serif;*/
+	/*font-family: 'Montserrat', sans-serif;*/
+	/*font-family: 'Mulish', sans-serif;*/
+	font-family: 'Quicksand', sans-serif;
+	margin: 0px 0px 0px 0px;
+	padding: 5px 10px 0px 10px;
+	font-weight: 300;
+	word-wrap: break-word;
+  	background-color: white;
+}
+
+.folder_bcplayer_div_1 {
+	width: 700px;
+	height: auto;
+}
+
+.folder_bcplayer_1 {
 	border: 0; 
 	width: 700px;
-	height: 42px;
+	padding: 5px 0px 0px 0px;
+	height: 120px;
 }
 
 /* other collapsibles temporary content */
@@ -187,94 +227,121 @@ a:hover {
 }
 	
 a:active {
- 	color: white;
-  	background-color: #0000A6;
+ 	color: black;
+  	background-color: white;
   	text-decoration: none;
 }
 
-/* vertical screen device */
+/* responsive mode (less than 700px) */
 
 @media screen and (max-width: 700px) {
-  .left, .main, .right {
-    	width: 100%; /* The width is 130%, when the viewport is 700px or smaller */
-  }
-  .centered {
-	width: 100%;
-	margin: auto;
-  }
-  body {   
-	width: 100%;
-    	margin: auto;
-	padding: 0px 0px 0px 0px;
-  }
-  .text {
-	font-size: 4.5vw;
-    	font-family: "Times New Roman", Times, serif;
-    	word-wrap: normal;
-    	width: 99%;
-    	margin: auto;
-    	background-color: white;
-  }
-  p { 
-  	font-size: 4.5vw;
-  	margin: 0px 6px 0px 0px;
-	padding: 0px 0px 0px  0px ;
- 	width: 100%;
-  }
-img {
-	width: 100%;
-	object-fit: cover;
-}
-  nav {
-	/*font-family: "Times New Roman", Times, serif;*/
-	font-family: Raleway, Thin, sans serif;
-  	font-size: 4.5vw;
-  	margin: auto;
-	width: 99%;
-  }
-  hr {
-  	width: 100%;
-  }
-	.fold1 {
-		width: 100%;
-  		padding: 0px 0px 0px 0px;
-		display: flex;
-		flex-wrap: wrap;
-		align-content: flex-start;
-		align-items: flex-start;
-  		max-height: 0;
-  		overflow: hidden;
-  		transition: max-height 0.3s ease-out;
-  		background-color: white;
+	.left, .main, .right {
+    		width: 100%; /* The width is 130%, when the viewport is 700px or smaller */
 	}
-
-	.fold1_txt {
+	.centered {
 		width: 100%;
+		margin: auto;
+  	}
+  	body {   
+		width: 100%;
+    		margin: auto;
+		padding: 0px 0px 0px 0px;
+  	}
+  	.text {
+		font-size: 4.5vw;
+    		font-family: "Times New Roman", Times, serif;
+    		word-wrap: normal;
+    		width: 99%;
+    		margin: auto;
+    		background-color: white;
+  	}
+  	p { 
   		font-size: 4.5vw;
-		word-wrap: break-word;
-  		/*font-family: "Times New Roman", Times, serif;*/
-		font-family: 'Raleway', sans-serif;
-		/*font-family: 'Montserrat', sans-serif;*/
-		font-weight: 300;
-  		width: 350px;
+  		margin: 0px 6px 0px 0px;
+		padding: 0px 0px 0px  0px ;
+ 		width: 100%;
+  	}
+	img {
+		width: 100%;
+		object-fit: cover;
+	}
+	nav {
+		/*font-family: "Times New Roman", Times, serif;*/
+		/*font-family: Raleway, Thin, sans serif;*/
+		font-family: 'Space Mono', monospace;
+  		font-size: 4.5vw;
   		margin: auto;
+		width: 99%;
+  	}
+  	hr {
+  		width: 100%;
+  	}
+	.folder_container_1 {
+	gap: 0;
+	}
+	.folder_img_1 {  
+		display: flex;
+		width: auto;
+  		height: auto;
+		object-fit: none;
+		margin: 0px 0px 0px 0px;
+		padding: 0px 0px 0px 0px;
+	}
+	.folder_txt_side_1 {
+		width: auto;
+		height: auto;
+  		font-size: 80%;
+  		/*font-family: "Times New Roman", Times, serif;*/
+		/*font-family: 'Raleway', sans-serif;*/
+		/*font-family: 'Montserrat', sans-serif;*/
+		/*font-family: 'Mulish', sans-serif;*/
+		font-family: 'Quicksand', sans-serif;
+		margin: 0px 0px 0px 0px;
+		padding: 15px 15px 15px 15px;
+		font-weight: 300;
+		word-wrap: break-word;
   		background-color: white;
 	}
-  .content {
-  	width: 100%;
-  }
-  .collapsible {
-  	background-color: #000;
-	margin: 0px 0px 0px 0px;
-  	color: white;
-  	cursor: pointer;
-  	padding: 18px;
-  	width: 100%;
-  	border: none;
-  	text-align: left;
-  	outline: none;
-  	font-size: 4vw;
+	.folder_txt_main_1 {
+		width: auto;
+		height: auto;
+  		font-size: 80%;
+  		/*font-family: "Times New Roman", Times, serif;*/
+		/*font-family: 'Raleway', sans-serif;*/
+		/*font-family: 'Montserrat', sans-serif;*/
+		/*font-family: 'Mulish', sans-serif;*/
+		font-family: 'Quicksand', sans-serif;
+		margin: 0px 0px 0px 0px;
+		padding: 15px 15px 15px 15px;
+		font-weight: 300;
+		word-wrap: break-word;
+  		background-color: white;
+	}
+ 	.folder_bcplayer_div_1 {
+		width: 100%;
+		height: 120px;
 }
+	.folder_bcplayer_1 {
+		border: 0; 
+		width: 100%;
+		height: 120px;
+		padding: 0% 0% 0% 0%;
+	}
+  	.content {
+  		width: 100%;
+  	}
+  	.collapsible {
+  		background-color: #000;
+		margin: 0px 0px 0px 0px;
+  		color: white;
+  		cursor: pointer;
+  		padding: 18px;
+  		width: 100%;
+  		border: none;
+  		text-align: left;
+  		outline: none;
+  		font-size: 4vw;
+	}
 }
 
 </style>
@@ -283,23 +350,33 @@ img {
 
 <div class="centered">
 
+<!--
 <div class="text">
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 </div>
+-->
 
 <button class="collapsible";>0</button>
-<div class="fold_container_01">
+<div class="folder_container_1">
 
-<div class="fold_img_01">
+<div class="folder_img_1">
 <img src="img/img2.png" alt="src">
 </div>
 
 <div>
-<p class="fold_txt_01">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<p class="folder_txt_side_1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br><br> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit...</p>
 </div>
 
 <div>
-<iframe class="fold_player_01" src="https://bandcamp.com/EmbeddedPlayer/album=3165089018/size=small/bgcol=ffffff/linkcol=333333/artwork=none/track=469333186/transparent=true/" seamless><a href="https://berndschurer.bandcamp.com/album/parallax">Parallax by Bernd Schurer</a></iframe>
+<p class="folder_txt_main_1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Sed ut perspiciatis unde omnis iste natus error.</p>
+</div>
+
+<div>
+<p class="folder_txt_main_1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Sed ut perspiciatis unde omnis iste natus error.</p>
+</div>
+
+<div class="folder_bcplayer_div_1">
+<iframe class="folder_bcplayer_1" src="https://bandcamp.com/EmbeddedPlayer/album=3165089018/size=large/bgcol=ffffff/linkcol=333333/tracklist=false/artwork=none/transparent=true/" seamless><a href="https://berndschurer.bandcamp.com/album/parallax">Parallax by Bernd Schurer</a></iframe>
 </div>
 <hr>
 </div>
