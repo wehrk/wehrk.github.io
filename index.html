@@ -20,7 +20,18 @@ font-family: 'Source Code Pro', monospace;
 font-family: 'Space Mono', monospace;
 -->
 
+<!-- variable icon font -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
 <style>
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 300,
+  'GRAD' -25,
+  'opsz' 20
+}
 
 /* centered div */
 
@@ -92,35 +103,51 @@ hr {
 /* collapsibles */
 
 .collapsible {
-	/* to do: display: flex; */
+	display: flex; 
+	justify-content: center;
+	align-items: flex-start;
+	flex-direction: column;
+	/*font-family: 'Raleway', sans-serif;*/
+	font-weight: 200;
 	font-family: 'Montserrat', sans-serif;
-	font-weight: 400;
+	/*font-family: 'Source Code Pro', monospace;*/
+	/*font-family: 'Space Mono', monospace;*/
 	background-color: #000;
 	color: white;
 	cursor: pointer;
 	margin: 0px;
-	padding: 19px;
+	padding: 0px;
 	width: 100%;
+	height: 70px;
 	border: none;
 	text-align: left;
   	outline: none;
-  	font-size: 17px;
+  	font-size: 15px;
+}
+
+.folder_button_layout {
+	width: 680px;
+	padding: 10px 10px 10px 10px;
 }
 
 .active, .collapsible:hover {
- 	 background-color: #0000A6;
+ 	background-color: #0000A6;
 }
 
-.collapsible:after {
-  	content: '\002B';
-  	color: white;
-  	font-weight: bold;
-  	float: right;
-  	margin-left: 0px;
+.folder_number {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	font-size: 15px;
 }
 
-.active:after {
-  	content: "\2212";
+.folder_title {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 200;
+	font-size: 15px;
+}
+
+.folder_symbol {
+	text-align: end;
 }
 
 /* fold 1 content */
@@ -330,17 +357,54 @@ a:active {
   	.content {
   		width: 100%;
   	}
-  	.collapsible {
-  		background-color: #000;
-		margin: 0px 0px 0px 0px;
-  		color: white;
-  		cursor: pointer;
-  		padding: 23px;
-  		width: 100%;
-  		border: none;
-  		text-align: left;
+
+	.collapsible {
+		display: flex; 
+		justify-content: center;
+		align-items: flex-start;
+		flex-direction: column;
+		/*font-family: 'Raleway', sans-serif;*/
+		font-weight: 200;
+		font-family: 'Montserrat', sans-serif;
+		/*font-family: 'Source Code Pro', monospace;*/
+		/*font-family: 'Space Mono', monospace;*/
+		background-color: #000;
+		color: white;
+		cursor: pointer;
+		margin: 0px;
+		padding: 0px;
+		width: 100%;
+		height: 70px;
+		border: none;
+		text-align: left;
   		outline: none;
-  		font-size: 4vw;
+  		font-size: 15px;
+	}
+
+	.folder_button_layout {
+		padding: 0px 0px 0px 0px;
+		width: 100%;
+	}
+
+	.active, .collapsible:hover {
+ 		background-color: #0000A6;
+	}
+	.folder_number {
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 400;
+		font-size: 4.3vw;
+		padding: 0px 10px 0px 10px;
+	}
+	.folder_title {
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 200;
+		font-size: 4.3vw;
+		padding: 0px 10px 0px 10px;
+	}
+	.folder_symbol {
+		text-align: end;
+		font-size: 4.3vw;
+		padding: 0px 10px 0px 10px;
 	}
 }
 
@@ -356,7 +420,25 @@ a:active {
 </div>
 -->
 
-<button class="collapsible";>0</button>
+<!-- folder 1 -->
+
+<button class="collapsible";>
+<div class="folder_button_layout";>
+
+<div class="folder_number";>
+0
+</div>
+
+<div class="folder_title";>
+<i>selected works 22-23</i>
+</div>
+
+<div class="folder_symbol">
+&#172;
+</div>
+
+</div>
+</button>
 <div class="folder_container_1">
 
 <div class="folder_img_1">
@@ -381,40 +463,173 @@ a:active {
 <hr>
 </div>
 
-<button class="collapsible">1</button>
+<!-- folder 2 -->
+
+<button class="collapsible";>
+<div class="folder_button_layout";>
+
+<div class="folder_number";>
+1
+</div>
+
+<div class="folder_title";>
+<i>title</i>
+</div>
+
+<div class="folder_symbol">
+&#172;
+</div>
+
+</div>
+</button>
+
 <div class="content">
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 </div>
 
-<button class="collapsible">2</button>
+<!-- folder 3 -->
+
+<button class="collapsible";>
+<div class="folder_button_layout";>
+
+<div class="folder_number";>
+2
+</div>
+
+<div class="folder_title";>
+<i>title</i>
+</div>
+
+<div class="folder_symbol">
+&#172;
+</div>
+
+</div>
+</button>
+
 <div class="content">
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 </div>
 
-<button class="collapsible">3</button>
+<!-- folder 4 -->
+
+<button class="collapsible";>
+<div class="folder_button_layout";>
+
+<div class="folder_number";>
+3
+</div>
+
+<div class="folder_title";>
+<i>title</i>
+</div>
+
+<div class="folder_symbol">
+&#172;
+</div>
+
+</div>
+</button>
+
 <div class="content">
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 </div>
 
-<button class="collapsible">4</button>
+
+<!-- folder 5 -->
+
+<button class="collapsible";>
+<div class="folder_button_layout";>
+
+<div class="folder_number";>
+4
+</div>
+
+<div class="folder_title";>
+<i>title</i>
+</div>
+
+<div class="folder_symbol">
+&#172;
+</div>
+
+</div>
+</button>
+
 <div class="content">
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 </div>
 
-<button class="collapsible">5</button>
+<!-- folder 6 -->
+
+<button class="collapsible";>
+<div class="folder_button_layout";>
+
+<div class="folder_number";>
+5
+</div>
+
+<div class="folder_title";>
+<i>title</i>
+</div>
+
+<div class="folder_symbol">
+&#172;
+</div>
+
+</div>
+</button>
+
 <div class="content">
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 </div>
 
-<button class="collapsible">6</button>
+<!-- folder 7 -->
+
+<button class="collapsible";>
+<div class="folder_button_layout";>
+
+<div class="folder_number";>
+6
+</div>
+
+<div class="folder_title";>
+<i>title</i>
+</div>
+
+<div class="folder_symbol">
+&#172;
+</div>
+
+</div>
+</button>
+
 <div class="content">
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 </div>
 
-<button class="collapsible">7</button>
+<!-- folder 8 -->
+
+<button class="collapsible";>
+<div class="folder_button_layout";>
+
+<div class="folder_number";>
+7
+</div>
+
+<div class="folder_title";>
+<i>title</i>
+</div>
+
+<div class="folder_symbol">
+&#172;
+</div>
+
+</div>
+</button>
+
 <div class="content">
 <div style="padding:177.78% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/793656468?h=6469b2179f&color=0000A6&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
-
 </div>
 
 <nav>
