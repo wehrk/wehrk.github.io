@@ -97,8 +97,9 @@ hr {
   	width: 700px;
   	margin: auto;
 	margin-left: 0;
-	border-right: 0;
+	margin-right: 0;
 	border-left: 0;
+	border-right: 0;
 }
 
 /* collapsibles */
@@ -126,9 +127,30 @@ hr {
   	font-size: 15px;
 }
 
-.folder_button_layout {
+.folder_button_main_layout {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+	width: 100%;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+.divider {
+	border: 0.5px solid;
+	color: white;
+  	width: 700px;
+	margin: 0px auto 0px auto;
+	padding: 0px 0px 0px 0px;
+	width: 96.5%;
+	text-align: center;
+	transition: color 0.15s ease-out;
+}
+
+.folder_button_secondary_layout {
 	width: 680px;
-	padding: 10px 10px 10px 10px;
+	padding: 10px 10px 0px 10px;
 }
 
 .active, .collapsible:hover {
@@ -170,7 +192,7 @@ hr {
 	gap: 5px;
   	max-height: 0;
   	overflow: hidden;
-  	transition: max-height 0.3s ease-out;
+  	transition: max-height 0.15s ease-out;
   	background-color: white;
 }
 
@@ -305,6 +327,14 @@ a:active {
   	hr {
   		width: 100%;
   	}
+	.divider {
+		border: 1px solid #0000A6;
+  		width: 700px;
+		margin: 0px 0px 0px 0px;
+		padding: 0px 0px 0px 0px;
+		width: 95%;
+		text-align: center;
+	}
 	.folder_container_1 {
 	gap: 0;
 	}
@@ -353,7 +383,6 @@ a:active {
   	.content {
   		width: 100%;
   	}
-
 	.collapsible {
 		display: flex; 
 		justify-content: center;
@@ -377,9 +406,30 @@ a:active {
   		font-size: 15px;
 	}
 
-	.folder_button_layout {
-		padding: 0px 0px 0px 0px;
+	.folder_button_main_layout {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 100%;
 		width: 100%;
+		margin: 0px 0px 0px 0px;
+		padding: 0px 0px 0px 0px;
+	}
+
+	.divider {
+		border: 0.5px solid;
+		color: white;
+  		width: 100%;
+		margin: 0px auto 0px auto;
+		padding: 0px 0px 0px 0px;
+		width: 96.5%;
+		text-align: center;
+		transition: color 0.15s ease-out;
+	}
+
+	.folder_button_secondary_layout {
+		width: 100%;
+		padding: 5px 0px 5px 0px;
 	}
 
 	.active, .collapsible:hover {
@@ -424,11 +474,14 @@ a:active {
 <!-- folder 1 -->
 
 <button class="collapsible";>
-<div class="folder_button_layout";>
+
+<div class="folder_button_main_layout";>
+<div class="folder_button_secondary_layout";>
 
 <div class="folder_number";>
 #
 </div>
+
 <div class="folder_title";>
 selected works 22-23
 </div>
@@ -438,6 +491,11 @@ selected works 22-23
 </div>
 
 </div>
+
+<hr class="divider";>
+
+</div>
+
 </button>
 <div class="folder_container_1">
 
@@ -446,7 +504,7 @@ selected works 22-23
 </div>
 
 <div>
-<p class="folder_txt_side_1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br><br> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit...</p>
+<p class="folder_txt_side_1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit...</p>
 </div>
 
 <div>
@@ -466,7 +524,8 @@ selected works 22-23
 <!-- folder 2 -->
 
 <button class="collapsible";>
-<div class="folder_button_layout";>
+<div class="folder_button_main_layout";>
+<div class="folder_button_secondary_layout";>
 
 <div class="folder_number";>
 1
@@ -481,6 +540,10 @@ title
 </div>
 
 </div>
+
+<hr class="divider";>
+
+</div>
 </button>
 
 <div class="content">
@@ -490,7 +553,8 @@ title
 <!-- folder 3 -->
 
 <button class="collapsible";>
-<div class="folder_button_layout";>
+<div class="folder_button_main_layout";>
+<div class="folder_button_secondary_layout";>
 
 <div class="folder_number";>
 2
@@ -505,6 +569,10 @@ title
 </div>
 
 </div>
+
+<hr class="divider";>
+
+</div>
 </button>
 
 <div class="content">
@@ -514,7 +582,8 @@ title
 <!-- folder 4 -->
 
 <button class="collapsible";>
-<div class="folder_button_layout";>
+<div class="folder_button_main_layout";>
+<div class="folder_button_secondary_layout";>
 
 <div class="folder_number";>
 3
@@ -529,6 +598,10 @@ title
 </div>
 
 </div>
+
+<hr class="divider";>
+
+</div>
 </button>
 
 <div class="content">
@@ -539,7 +612,8 @@ title
 <!-- folder 5 -->
 
 <button class="collapsible";>
-<div class="folder_button_layout";>
+<div class="folder_button_main_layout";>
+<div class="folder_button_secondary_layout";>
 
 <div class="folder_number";>
 4
@@ -554,6 +628,10 @@ title
 </div>
 
 </div>
+
+<hr class="divider";>
+
+</div>
 </button>
 
 <div class="content">
@@ -563,7 +641,8 @@ title
 <!-- folder 6 -->
 
 <button class="collapsible";>
-<div class="folder_button_layout";>
+<div class="folder_button_main_layout";>
+<div class="folder_button_secondary_layout";>
 
 <div class="folder_number";>
 5
@@ -578,6 +657,10 @@ title
 </div>
 
 </div>
+
+<hr class="divider";>
+
+</div>
 </button>
 
 <div class="content">
@@ -587,7 +670,8 @@ title
 <!-- folder 7 -->
 
 <button class="collapsible";>
-<div class="folder_button_layout";>
+<div class="folder_button_main_layout";>
+<div class="folder_button_secondary_layout";>
 
 <div class="folder_number";>
 6
@@ -602,6 +686,10 @@ title
 </div>
 
 </div>
+
+<hr class="divider";>
+
+</div>
 </button>
 
 <div class="content">
@@ -611,7 +699,8 @@ title
 <!-- folder 8 -->
 
 <button class="collapsible";>
-<div class="folder_button_layout";>
+<div class="folder_button_main_layout";>
+<div class="folder_button_secondary_layout";>
 
 <div class="folder_number";>
 7
@@ -626,6 +715,8 @@ title
 </div>
 
 </div>
+
+</div>
 </button>
 
 <div class="content">
@@ -634,9 +725,9 @@ title
 
 <nav>
 <a href="glossary.html"><ins>glossary</ins></a>,
-<a href="/html/"><ins>)</ins></a>,
-<a href="/js/"><ins>))</ins></a>,
-<a href="/jquery/"><ins>)))</ins></a>
+<a href="/html/">)</a>,
+<a href="/js/">))</a>,
+<a href="/jquery/">)))</a>
 </nav>
 
 
