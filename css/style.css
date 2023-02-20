@@ -1,0 +1,428 @@
+/* centered div */
+	
+.centered {
+	width: 700px;
+	margin: auto;
+}
+
+/* basics */
+
+body {
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+p {
+  	font-size: 100%;
+  	/*font-family: "Times New Roman", Times, serif;*/
+	font-family: 'Raleway', sans-serif;
+	/*font-family: 'Montserrat', sans-serif;*/
+	font-weight: 300;
+  	width: 700px;
+  	margin: auto;
+  	background-color: white;
+}
+
+nav {
+	/*font-family: "Times New Roman", Times, serif;*/
+	/*font-family: Raleway, Thin, sans serif;*/
+	font-family: 'Spline Sans Mono', monospace;
+	/*font-family: 'Space Mono', monospace;*/
+	/*font-family: 'Quicksand', sans-serif;*/
+  	font-size: 90%;
+	word-spacing: -7px;
+	width: 700px;
+  	margin: 0px;
+}
+
+/* text outside foldable containers */
+
+.text {
+	font-size: 100%;
+    	/*font-family: "Times New Roman", Times, serif;*/
+	font-family: Raleway, Thin, sans serif;
+	word-wrap: normal;
+   	width: 700px;
+   	margin: auto;
+   	background-color: white;
+}
+
+/* paragraph hover effect */
+
+/*
+p:hover {
+    	color: black;
+        background-color: black;
+}
+*/
+
+/* horizontal lines */
+
+hr {
+	border: 8px solid #0000A6;
+  	width: 700px;
+  	margin: auto;
+	margin-left: 0;
+	margin-right: 0;
+	border-left: 0;
+	border-right: 0;
+}
+
+/* collapsibles */
+
+.collapsible {
+	display: flex; 
+	justify-content: center;
+	align-items: flex-start;
+	flex-direction: column;
+	/*font-family: 'Raleway', sans-serif;*/
+	font-weight: 200;
+	font-family: 'Montserrat', sans-serif;
+	/*font-family: 'Source Code Pro', monospace;*/
+	/*font-family: 'Space Mono', monospace;*/
+	background-color: #000;
+	color: white;
+	cursor: pointer;
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	height: 77px;
+	border: none;
+	text-align: left;
+  	outline: none;
+  	font-size: 15px;
+}
+
+.folder_button_main_layout {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+	width: 100%;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+.divider {
+	border: 0.5px solid;
+	color: white;
+  	width: 700px;
+	margin: 0px auto 0px auto;
+	padding: 0px 0px 0px 0px;
+	width: 96.5%;
+	text-align: center;
+}
+
+.folder_button_secondary_layout {
+	width: 680px;
+	padding: 10px 10px 0px 10px;
+}
+
+.active, .collapsible:hover {
+ 	background-color: #0000A6;
+}
+
+.folder_number {
+	/*font-family: 'Montserrat', sans-serif;*/
+	font-family: 'IBM Plex Mono', monospace;
+	font-weight: 100;
+	font-size: 15px;
+}
+
+.folder_title {
+	/*font-family: 'Source Code Pro', monospace;*/
+	font-family: 'Spline Sans Mono', monospace;
+	word-spacing: -3px;
+	font-style: italic;
+	/*font-family: 'Quicksand', sans-serif;*/
+	font-weight: 300;
+	font-size: 15px;
+}
+
+.folder_symbol {	
+	font-family: 'IBM Plex Mono', monospace;
+	text-align: end;
+	font-size: 19px;
+}
+
+/* fold 1 content */
+
+.folder_container_1 {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-content: flex-start;
+	align-items: flex-start;
+	margin: 0px;
+	gap: 5px;
+  	max-height: 0;
+  	overflow: hidden;
+  	transition: max-height 0.15s ease-out;
+  	background-color: white;
+}
+
+.folder_container_1 > div {
+	margin: 0px;
+}
+
+.folder_img_1 {  
+	display: flex;
+	width: 345px;
+  	height: 345px;
+	object-fit: none;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+.folder_txt_side_1 {
+	width: 325px;
+	height: 345px;
+  	font-size: 80%;
+	font-family: 'IBM Plex Sans', sans-serif;
+	/*font-family: 'Quicksand', sans-serif;*/
+	margin: 0px 0px 0px 0px;
+	padding: 15px 15px 0px 10px;
+	font-weight: 300;
+	word-wrap: break-word;
+  	background-color: white;
+}
+
+.folder_txt_main_1 {
+	width: 325px;
+	height: 172.5px;
+  	font-size: 80%;
+	font-family: 'IBM Plex Sans', sans-serif;
+	/*font-family: 'Quicksand', sans-serif;*/
+	margin: 0px 0px 0px 0px;
+	padding: 5px 10px 0px 10px;
+	font-weight: 300;
+	word-wrap: break-word;
+  	background-color: white;
+}
+
+.folder_bcplayer_div_1 {
+	width: 700px;
+	height: auto;
+}
+
+.folder_bcplayer_1 {
+	border: 0; 
+	width: 700px;
+	padding: 5px 0px 0px 0px;
+	height: 120px;
+}
+
+/* other collapsibles temporary content */
+
+.content {
+  	padding: 0px 0px 0px 0px;
+  	max-height: 0;
+  	overflow: hidden;
+  	transition: max-height 0.3s ease-out;
+  	background-color: white;
+}
+
+/* links */
+
+a:link {
+  	color: black;
+  	background-color: transparent;
+  	text-decoration: none;
+}
+
+a:visited {
+ 	color: black;
+ 	background-color: transparent;
+ 	text-decoration: none;
+}
+
+a:hover {
+  	color: black;
+  	background-color: black;
+  	text-decoration: none;
+}
+	
+a:active {
+ 	color: black;
+  	background-color: white;
+  	text-decoration: none;
+}
+
+/* responsive mode (less than 700px) */
+
+@media screen and (max-width: 700px) {
+	.left, .main, .right {
+    		width: 100%; /* The width is 130%, when the viewport is 700px or smaller */
+	}
+	.centered {
+		width: 100%;
+		margin: auto;
+  	}
+  	body {   
+		width: 100%;
+    		margin: auto;
+		padding: 0px 0px 0px 0px;
+  	}
+  	.text {
+		font-size: 4.5vw;
+    		font-family: "Times New Roman", Times, serif;
+    		word-wrap: normal;
+    		width: 99%;
+    		margin: auto;
+    		background-color: white;
+  	}
+  	p { 
+  		font-size: 4.5vw;
+  		margin: 0px 6px 0px 0px;
+		padding: 0px 0px 0px  0px ;
+ 		width: 100%;
+  	}
+	img {
+		width: 100%;
+		object-fit: cover;
+	}
+	nav {
+		/*font-family: "Times New Roman", Times, serif;*/
+		/*font-family: Raleway, Thin, sans serif;*/
+		font-family: 'Space Mono', monospace;
+  		font-size: 4.0vw;
+  		margin: auto;
+		width: 99%;
+  	}
+  	hr {
+  		width: 100%;
+  	}
+	.divider {
+		border: 1px solid #0000A6;
+  		width: 700px;
+		margin: 0px 0px 0px 0px;
+		padding: 0px 0px 0px 0px;
+		width: 95%;
+		text-align: center;
+	}
+	.folder_container_1 {
+	gap: 0;
+	}
+	.folder_img_1 {  
+		display: flex;
+		width: auto;
+  		height: auto;
+		object-fit: none;
+		margin: 0px 0px 0px 0px;
+		padding: 0px 0px 0px 0px;
+	}
+	.folder_txt_side_1 {
+		width: auto;
+		height: auto;
+  		font-size: 4.5vw;
+		font-family: 'IBM Plex Sans', sans-serif;
+		/*font-family: 'Quicksand', sans-serif;*/
+		margin: 0px 0px 0px 0px;
+		padding: 15px 15px 15px 15px;
+		font-weight: 300;
+		word-wrap: break-word;
+  		background-color: white;
+	}
+	.folder_txt_main_1 {
+		width: auto;
+		height: auto;
+  		font-size: 4.5vw;
+		font-family: 'IBM Plex Sans', sans-serif;
+		/*font-family: 'Quicksand', sans-serif;*/
+		margin: 0px 0px 0px 0px;
+		padding: 15px 15px 15px 15px;
+		font-weight: 300;
+		word-wrap: break-word;
+  		background-color: white;
+	}
+ 	.folder_bcplayer_div_1 {
+		width: 100%;
+		height: 120px;
+}
+	.folder_bcplayer_1 {
+		border: 0; 
+		width: 100%;
+		height: 120px;
+		padding: 0% 0% 0% 0%;
+	}
+  	.content {
+  		width: 100%;
+  	}
+	.collapsible {
+		display: flex; 
+		justify-content: center;
+		align-items: flex-start;
+		flex-direction: column;
+		/*font-family: 'Raleway', sans-serif;*/
+		font-weight: 200;
+		font-family: 'Montserrat', sans-serif;
+		/*font-family: 'Source Code Pro', monospace;*/
+		/*font-family: 'Space Mono', monospace;*/
+		background-color: #000;
+		color: white;
+		cursor: pointer;
+		margin: 0px;
+		padding: 0px;
+		width: 100%;
+		height: 75px;
+		border: none;
+		text-align: left;
+  		outline: none;
+  		font-size: 15px;
+	}
+
+	.folder_button_main_layout {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 100%;
+		width: 100%;
+		margin: 0px 0px 0px 0px;
+		padding: 0px 0px 0px 0px;
+	}
+
+	.divider {
+		border: 0.5px solid white;
+		color: white;
+		margin: 0px auto 0px auto;
+		padding: 0px 0px 0px 0px;
+		width: 94%;
+	}
+
+	.folder_button_secondary_layout {
+		width: 100%;
+		padding: 5px 0px 5px 0px;
+	}
+
+	.active, .collapsible:hover {
+ 		background-color: #0000A6;
+	}
+
+	.folder_number {
+		font-family: 'IBM Plex Mono', monospace;
+		word-spacing: -3px;
+		font-weight: 400;
+		/*font-size: 4.3vw;*/
+		font-size: 16px;
+		padding: 0px 10px 0px 10px;
+	}
+
+	.folder_title {
+		font-family: 'Spline Sans Mono', monospace;
+		font-style: italic;
+		word-spacing: -3px;
+		font-weight: 200;
+		/*font-size: 4.3vw;*/
+		font-size: 16px;
+		padding: 0px 10px 0px 10px;
+	}
+
+	.folder_symbol {
+		font-family: 'Spline Sans Mono', monospace;
+		word-spacing: -3px;
+		text-align: end;
+		/*font-size: 4.3vw;*/
+		font-size: 16px;
+		padding: 0px 10px 0px 10px;
+	}
+}
