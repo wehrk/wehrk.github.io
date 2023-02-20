@@ -1,372 +1,4 @@
-
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8/">
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-
-<!-- title --> 
-<title>nth</title>
-
-<!-- google fonts api --> 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Cousine:ital@0;1&family=DM+Mono:ital,wght@0,300;0,400;1,300;1,400&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&family=Overpass+Mono:wght@300;400&family=PT+Mono&family=Quicksand:wght@300;400&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&family=Red+Hat+Mono:ital,wght@0,300;0,400;1,300;1,400&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&family=Space+Mono:ital@0;1&family=Spline+Sans+Mono:ital,wght@0,300;0,400;1,300;1,400&family=Ubuntu+Mono:ital@0;1&display=swap" rel="stylesheet">
-
-<!-- css rules to specify font families:
-font-family: 'Cormorant Infant', serif;
-font-family: 'Cousine', monospace;
-font-family: 'DM Mono', monospace;
-font-family: 'IBM Plex Mono', monospace;
-font-family: 'IBM Plex Sans', sans-serif;
-font-family: 'Montserrat', sans-serif;
-font-family: 'Montserrat Alternates', sans-serif;
-font-family: 'Overpass Mono', monospace;
-font-family: 'PT Mono', monospace;
-font-family: 'Quicksand', sans-serif;
-font-family: 'Raleway', sans-serif;
-font-family: 'Red Hat Mono', monospace;
-font-family: 'Source Code Pro', monospace;
-font-family: 'Space Mono', monospace;
-font-family: 'Spline Sans Mono', monospace;
-font-family: 'Ubuntu Mono', monospace;
--->
-
-<style>
-
-/* centered div */
-
-.centered {
-	width: 700px;
-	margin: auto;
-}
-
-/* basics */
-
-body {
-	margin: 0px 0px 0px 0px;
-	padding: 0px 0px 0px 0px;
-}
-
-p {
-  	font-size: 100%;
-  	/*font-family: "Times New Roman", Times, serif;*/
-	font-family: 'Raleway', sans-serif;
-	/*font-family: 'Montserrat', sans-serif;*/
-	font-weight: 300;
-  	width: 700px;
-  	margin: auto;
-  	background-color: white;
-}
-
-nav {
-	/*font-family: "Times New Roman", Times, serif;*/
-	/*font-family: Raleway, Thin, sans serif;*/
-	font-family: 'Space Mono', monospace;
-  	font-size: 90%;
-	word-spacing: -7px;
-	width: 700px;
-  	margin: 0px;
-}
-
-/* text outside foldable containers */
-
-.text {
-	font-size: 100%;
-    	/*font-family: "Times New Roman", Times, serif;*/
-	font-family: Raleway, Thin, sans serif;
-	word-wrap: normal;
-   	width: 700px;
-   	margin: auto;
-   	background-color: white;
-}
-
-/* paragraph hover effect */
-
-/*
-p:hover {
-    	color: black;
-        background-color: black;
-}
-*/
-
-/* horizontal lines */
-
-hr {
-	border: 8px solid #0000A6;
-  	width: 700px;
-  	margin: auto;
-	margin-left: 0;
-	margin-right: 0;
-	border-left: 0;
-	border-right: 0;
-}
-
-/* collapsibles */
-
-.collapsible {
-	display: flex; 
-	justify-content: center;
-	align-items: flex-start;
-	flex-direction: column;
-	/*font-family: 'Raleway', sans-serif;*/
-	font-weight: 200;
-	font-family: 'Montserrat', sans-serif;
-	/*font-family: 'Source Code Pro', monospace;*/
-	/*font-family: 'Space Mono', monospace;*/
-	background-color: #000;
-	color: white;
-	cursor: pointer;
-	margin: 0px;
-	padding: 0px;
-	width: 100%;
-	height: 77px;
-	border: none;
-	text-align: left;
-  	outline: none;
-  	font-size: 15px;
-}
-
-.folder_button_main_layout {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	height: 100%;
-	width: 100%;
-	margin: 0px 0px 0px 0px;
-	padding: 0px 0px 0px 0px;
-}
-
-.divider {
-	border: 0.5px solid;
-	color: white;
-  	width: 700px;
-	margin: 0px auto 0px auto;
-	padding: 0px 0px 0px 0px;
-	width: 96.5%;
-	text-align: center;
-	transition: color 0.15s ease-out;
-}
-
-.folder_button_secondary_layout {
-	width: 680px;
-	padding: 10px 10px 0px 10px;
-}
-
-.active, .collapsible:hover {
- 	background-color: #0000A6;
-}
-
-.folder_number {
-	/*font-family: 'Montserrat', sans-serif;*/
-	font-family: 'IBM Plex Mono', monospace;
-	font-weight: 100;
-	font-size: 15px;
-}
-
-.folder_title {
-	/*font-family: 'Source Code Pro', monospace;*/
-	font-family: 'Spline Sans Mono', monospace;
-	word-spacing: -3px;
-	font-style: italic;
-	/*font-family: 'Quicksand', sans-serif;*/
-	font-weight: 300;
-	font-size: 15px;
-}
-
-.folder_symbol {
-	font-family: 'IBM Plex Mono', monospace;
-	text-align: end;
-	font-size: 19px;
-}
-
-/* fold 1 content */
-
-.folder_container_1 {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: flex-start;
-	align-content: flex-start;
-	align-items: flex-start;
-	margin: 0px;
-	gap: 5px;
-  	max-height: 0;
-  	overflow: hidden;
-  	transition: max-height 0.15s ease-out;
-  	background-color: white;
-}
-
-.folder_container_1 > div {
-	margin: 0px;
-}
-
-.folder_img_1 {  
-	display: flex;
-	width: 345px;
-  	height: 345px;
-	object-fit: none;
-	margin: 0px 0px 0px 0px;
-	padding: 0px 0px 0px 0px;
-}
-
-.folder_txt_side_1 {
-	width: 325px;
-	height: 345px;
-  	font-size: 80%;
-	font-family: 'IBM Plex Sans', sans-serif;
-	/*font-family: 'Quicksand', sans-serif;*/
-	margin: 0px 0px 0px 0px;
-	padding: 15px 15px 0px 10px;
-	font-weight: 300;
-	word-wrap: break-word;
-  	background-color: white;
-}
-
-.folder_txt_main_1 {
-	width: 325px;
-	height: 172.5px;
-  	font-size: 80%;
-	font-family: 'IBM Plex Sans', sans-serif;
-	/*font-family: 'Quicksand', sans-serif;*/
-	margin: 0px 0px 0px 0px;
-	padding: 5px 10px 0px 10px;
-	font-weight: 300;
-	word-wrap: break-word;
-  	background-color: white;
-}
-
-.folder_bcplayer_div_1 {
-	width: 700px;
-	height: auto;
-}
-
-.folder_bcplayer_1 {
-	border: 0; 
-	width: 700px;
-	padding: 5px 0px 0px 0px;
-	height: 120px;
-}
-
-/* other collapsibles temporary content */
-
-.content {
-  	padding: 0px 0px 0px 0px;
-  	max-height: 0;
-  	overflow: hidden;
-  	transition: max-height 0.3s ease-out;
-  	background-color: white;
-}
-
-/* links */
-
-a:link {
-  	color: black;
-  	background-color: transparent;
-  	text-decoration: none;
-}
-
-a:visited {
- 	color: black;
- 	background-color: transparent;
- 	text-decoration: none;
-}
-
-a:hover {
-  	color: black;
-  	background-color: black;
-  	text-decoration: none;
-}
-	
-a:active {
- 	color: black;
-  	background-color: white;
-  	text-decoration: none;
-}
-
-/* responsive mode (less than 700px) */
-
-@media screen and (max-width: 700px) {
-	.left, .main, .right {
-    		width: 100%; /* The width is 130%, when the viewport is 700px or smaller */
-	}
-	.centered {
-		width: 100%;
-		margin: auto;
-  	}
-  	body {   
-		width: 100%;
-    		margin: auto;
-		padding: 0px 0px 0px 0px;
-  	}
-  	.text {
-		font-size: 4.5vw;
-    		font-family: "Times New Roman", Times, serif;
-    		word-wrap: normal;
-    		width: 99%;
-    		margin: auto;
-    		background-color: white;
-  	}
-  	p { 
-  		font-size: 4.5vw;
-  		margin: 0px 6px 0px 0px;
-		padding: 0px 0px 0px  0px ;
- 		width: 100%;
-  	}
-	img {
-		width: 100%;
-		object-fit: cover;
-	}
-	nav {
-		/*font-family: "Times New Roman", Times, serif;*/
-		/*font-family: Raleway, Thin, sans serif;*/
-		font-family: 'Space Mono', monospace;
-  		font-size: 4.0vw;
-  		margin: auto;
-		width: 99%;
-  	}
-  	hr {
-  		width: 100%;
-  	}
-	.divider {
-		border: 1px solid #0000A6;
-  		width: 700px;
-		margin: 0px 0px 0px 0px;
-		padding: 0px 0px 0px 0px;
-		width: 95%;
-		text-align: center;
-	}
-	.folder_container_1 {
-	gap: 0;
-	}
-	.folder_img_1 {  
-		display: flex;
-		width: auto;
-  		height: auto;
-		object-fit: none;
-		margin: 0px 0px 0px 0px;
-		padding: 0px 0px 0px 0px;
-	}
-	.folder_txt_side_1 {
-		width: auto;
-		height: auto;
-  		font-size: 4.5vw;
-		font-family: 'IBM Plex Sans', sans-serif;
-		/*font-family: 'Quicksand', sans-serif;*/
-		margin: 0px 0px 0px 0px;
-		padding: 15px 15px 15px 15px;
-		font-weight: 300;
-		word-wrap: break-word;
-  		background-color: white;
-	}
-	.folder_txt_main_1 {
-		width: auto;
-		height: auto;
-  		font-size: 4.5vw;
-		/*font-family: 'IBM Plex Sans', sans-serif;*/
-		font-family: 'Quicksand', sans-serif;
-		margin: 0px 0px 0px 0px;
-		padding: 15px 15px 15px 15px;
-		font-weight: 400;
+00;
 		word-wrap: break-word;
   		background-color: white;
 	}
@@ -422,7 +54,7 @@ a:active {
   		width: 100%;
 		margin: 0px auto 0px auto;
 		padding: 0px 0px 0px 0px;
-		width: 96.5%;
+		width: 94%;
 		text-align: center;
 		transition: color 0.15s ease-out;
 	}
@@ -435,6 +67,7 @@ a:active {
 	.active, .collapsible:hover {
  		background-color: #0000A6;
 	}
+
 	.folder_number {
 		font-family: 'IBM Plex Mono', monospace;
 		word-spacing: -3px;
@@ -442,6 +75,7 @@ a:active {
 		font-size: 4.3vw;
 		padding: 0px 10px 0px 10px;
 	}
+
 	.folder_title {
 		font-family: 'Spline Sans Mono', monospace;
 		font-style: italic;
@@ -450,6 +84,7 @@ a:active {
 		font-size: 4.3vw;
 		padding: 0px 10px 0px 10px;
 	}
+
 	.folder_symbol {
 		font-family: 'Spline Sans Mono', monospace;
 		word-spacing: -3px;
@@ -483,11 +118,11 @@ a:active {
 </div>
 
 <div class="folder_title";>
-selected works 22-23
+summon inner fxs
 </div>
 
 <div class="folder_symbol">
-&#172;
+&#172
 </div>
 
 </div>
@@ -528,7 +163,7 @@ selected works 22-23
 <div class="folder_button_secondary_layout";>
 
 <div class="folder_number";>
-1
+0
 </div>
 
 <div class="folder_title";>
@@ -557,7 +192,7 @@ title
 <div class="folder_button_secondary_layout";>
 
 <div class="folder_number";>
-2
+1
 </div>
 
 <div class="folder_title";>
@@ -586,7 +221,7 @@ title
 <div class="folder_button_secondary_layout";>
 
 <div class="folder_number";>
-3
+2
 </div>
 
 <div class="folder_title";>
@@ -616,7 +251,7 @@ title
 <div class="folder_button_secondary_layout";>
 
 <div class="folder_number";>
-4
+3
 </div>
 
 <div class="folder_title";>
@@ -645,7 +280,7 @@ title
 <div class="folder_button_secondary_layout";>
 
 <div class="folder_number";>
-5
+4
 </div>
 
 <div class="folder_title";>
@@ -674,7 +309,7 @@ title
 <div class="folder_button_secondary_layout";>
 
 <div class="folder_number";>
-6
+5
 </div>
 
 <div class="folder_title";>
@@ -703,7 +338,7 @@ title
 <div class="folder_button_secondary_layout";>
 
 <div class="folder_number";>
-7
+6
 </div>
 
 <div class="folder_title";>
@@ -724,10 +359,7 @@ title
 </div>
 
 <nav>
-<a href="glossary.html"><ins>glossary</ins></a>,
-<a href="/html/">)</a>,
-<a href="/js/">))</a>,
-<a href="/jquery/">)))</a>
+<a href="glossary.html"><ins>glossary</ins></a>
 </nav>
 
 
