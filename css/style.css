@@ -35,6 +35,16 @@ nav {
   	margin: 0px;
 }
 
+/* icons */
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 100,
+  'GRAD' 0,
+  'opsz' 24
+}
+
 /* text outside foldable containers */
 
 .text {
@@ -103,7 +113,9 @@ hr {
 	padding: 0px 0px 0px 0px;
 }
 
-.divider {
+/* folder dividers */
+
+.divider0 {
 	border: 0.5px solid;
 	color: white;
   	width: 700px;
@@ -111,6 +123,62 @@ hr {
 	padding: 0px 0px 0px 0px;
 	width: 96.5%;
 	text-align: center;
+	transition: opacity 0.1s ease-out;
+}
+
+.divider1 {
+	border: 0.5px solid;
+	color: white;
+  	width: 700px;
+	margin: 0px auto 0px auto;
+	padding: 0px 0px 0px 0px;
+	width: 96.5%;
+	text-align: center;
+	transition: opacity 0.1s ease-out;
+}
+
+.divider2 {
+	border: 0.5px solid;
+	color: white;
+  	width: 700px;
+	margin: 0px auto 0px auto;
+	padding: 0px 0px 0px 0px;
+	width: 96.5%;
+	text-align: center;
+	transition: opacity 0.1s ease-out;
+}
+
+.divider3 {
+	border: 0.5px solid;
+	color: white;
+  	width: 700px;
+	margin: 0px auto 0px auto;
+	padding: 0px 0px 0px 0px;
+	width: 96.5%;
+	text-align: center;
+	transition: opacity 0.1s ease-out;
+}
+
+.divider4 {
+	border: 0.5px solid;
+	color: white;
+  	width: 700px;
+	margin: 0px auto 0px auto;
+	padding: 0px 0px 0px 0px;
+	width: 96.5%;
+	text-align: center;
+	transition: opacity 0.1s ease-out;
+}
+
+.divider5 {
+	border: 0.5px solid;
+	color: white;
+  	width: 700px;
+	margin: 0px auto 0px auto;
+	padding: 0px 0px 0px 0px;
+	width: 96.5%;
+	text-align: center;
+	transition: opacity 0.1s ease-out;
 }
 
 .folder_button_secondary_layout {
