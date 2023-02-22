@@ -35,16 +35,6 @@ nav {
   	margin: 0px;
 }
 
-/* icons */
-
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 100,
-  'GRAD' 0,
-  'opsz' 24
-}
-
 /* text outside foldable containers */
 
 .text {
@@ -294,19 +284,19 @@ hr {
 
 a:link {
   	color: black;
-  	background-color: transparent;
+  	background-color: black;
   	text-decoration: none;
 }
 
 a:visited {
  	color: black;
- 	background-color: transparent;
+ 	background-color: black;
  	text-decoration: none;
 }
 
 a:hover {
   	color: black;
-  	background-color: black;
+  	background-color: white;
   	text-decoration: none;
 }
 	
@@ -492,5 +482,29 @@ a:active {
 		/*font-size: 4.3vw;*/
 		font-size: 16px;
 		padding: 0px 10px 0px 10px;
+	}
+
+	a:link {
+  		color: black;
+  		background-color: transparent;
+  		text-decoration: none;
+	}
+
+	a:visited {
+ 		color: black;
+ 		background-color :transparent;
+ 		text-decoration: none;
+	}
+
+	a:hover {
+  		color: black;
+  		background-color: black;
+  		text-decoration: none;
+	}
+	
+	a:active {
+ 		color: black;
+  		background-color: black;
+  		text-decoration: none;
 	}
 }
