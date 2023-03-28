@@ -59,8 +59,8 @@ p:hover {
 /* horizontal lines */
 
 hr {
-	border: 8px solid #0000A6;
-  	width: 700px;
+	border: 8px solid #FEFEFE; 
+	width: 700px;
   	margin: auto;
 	margin-left: 0;
 	margin-right: 0;
@@ -177,7 +177,9 @@ hr {
 }
 
 .active, .collapsible:hover {
- 	background-color: #0000A6;
+ 	background-color: #FEFEFE; /*#0000A6;*/
+	color: black;
+
 }
 
 .folder_number {
@@ -243,7 +245,44 @@ hr {
 	font-weight: 300;
 	word-wrap: break-word;
   	background-color: white;
-}
+	}
+
+.folder_quote {
+	width: auto;
+	height: auto;
+  	font-size: 100%;
+	font-family: 'IBM Plex Sans', sans-serif;
+	/*font-family: 'Quicksand', sans-serif;*/
+	margin: 0px 35px 0px 35px;
+	font-weight: 300;
+	word-wrap: break-word;
+  	background-color: white;
+	font-style: italic;
+	}
+
+.folder_cite {
+	width: auto;
+	height: auto;
+  	font-size: 80%;
+	font-family: 'IBM Plex Sans', sans-serif;
+	/*font-family: 'Quicksand', sans-serif;*/
+	margin: 0px 0px 0px 0px;
+	font-weight: 300;
+	background-color: white;
+	text-align: end;
+	font-style: italic;
+	}
+
+.folder_enumeration {
+	width: auto;
+	height: auto;
+  	font-size: 100%;
+	font-family: 'IBM Plex Sans', sans-serif;
+	/*font-family: 'Quicksand', sans-serif;*/
+	margin:  0px 10px 0px 10px;
+	font-weight: 300;
+	background-color: white;
+	}
 
 .folder_txt_main_1 {
 	width: 325px;
@@ -256,7 +295,7 @@ hr {
 	font-weight: 300;
 	word-wrap: break-word;
   	background-color: white;
-}
+	}
 
 .folder_bcplayer_div_1 {
 	width: 700px;
@@ -284,26 +323,26 @@ hr {
 
 a:link {
   	color: black;
-  	background-color: black;
-  	text-decoration: none;
+  	background-color: white;
+	text-decoration: underline;
 }
 
 a:visited {
  	color: black;
- 	background-color: black;
- 	text-decoration: none;
+ 	background-color: white;
+	text-decoration: underline;
 }
 
 a:hover {
   	color: black;
-  	background-color: white;
+  	background-color: black;
   	text-decoration: none;
 }
 	
 a:active {
  	color: black;
   	background-color: white;
-  	text-decoration: none;
+	text-decoration: underline;
 }
 
 /* responsive mode (less than 700px) */
@@ -452,8 +491,9 @@ a:active {
 		padding: 5px 0px 5px 0px;
 	}
 
-	.active, .collapsible:hover {
- 		background-color: #0000A6;
+	.active, .collapsible, .:hover {
+ 		background-color :#FEFEFE;
+		color: black;
 	}
 
 	.folder_number {
@@ -483,16 +523,16 @@ a:active {
 		font-size: 16px;
 		padding: 0px 10px 0px 10px;
 	}
-
+	
 	a:link {
   		color: black;
-  		background-color: transparent;
+  		background-color: white;
   		text-decoration: none;
 	}
 
 	a:visited {
  		color: black;
- 		background-color :transparent;
+ 		background-color: white;
  		text-decoration: none;
 	}
 
@@ -504,7 +544,7 @@ a:active {
 	
 	a:active {
  		color: black;
-  		background-color: black;
+  		background-color: white;
   		text-decoration: none;
 	}
 }
