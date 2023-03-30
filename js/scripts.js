@@ -1,3 +1,7 @@
+// click button element on page load
+window.onload = function () {
+document.getElementById("collapsible").click(); };
+
 // fold/unfold (collapsible) content
 var coll = document.getElementsByClassName("collapsible");
 var i;

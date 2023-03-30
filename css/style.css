@@ -179,7 +179,7 @@ hr {
 .active, .collapsible:hover {
  	background-color: #FEFEFE; /*#0000A6;*/
 	color: black;
-
+	transition: color 0.05s ease-out;
 }
 
 .folder_number {
