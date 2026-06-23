@@ -9,7 +9,7 @@
    ============================================================ */
 
 :root {
-  --gutter: 2vw;       /* narrow side margins */
+  --gutter: 3.5vw;     /* margin from the viewport frame */
   --title-gap: clamp(1.6rem, 6vw, 3rem); /* distance from title to text */
   --maxw: 100%;        /* text runs to the viewport, minus the gutter */
 
@@ -76,7 +76,6 @@ body {
   align-items: flex-start;
   background: var(--intro-bg);
   color: var(--intro-fg);
-  /* same margin all around, matching the parts */
   padding-block: var(--gutter);
   scroll-snap-align: start;
   scroll-snap-stop: always;
@@ -106,7 +105,6 @@ body {
   align-items: flex-start;
   background: var(--bg);
   color: var(--fg);
-  /* same margin all around: top/bottom gap matches the side gutter */
   padding-block: var(--gutter);
   scroll-snap-align: start;
   scroll-snap-stop: always;
@@ -179,9 +177,10 @@ body {
     background-image: linear-gradient(
       100deg,
       color-mix(in srgb, #000 calc(var(--reveal) * 100%), #fff) 0%,
-      color-mix(in srgb, #000 calc(var(--reveal) * 100%), #fff) 32%,
-      var(--bolt) 50%,
-      color-mix(in srgb, #000 calc(var(--reveal) * 100%), #fff) 68%,
+      color-mix(in srgb, #000 calc(var(--reveal) * 100%), #fff) 30%,
+      var(--bolt) 42%,
+      var(--bolt) 58%,                       /* flat bright plateau = wide wave */
+      color-mix(in srgb, #000 calc(var(--reveal) * 100%), #fff) 70%,
       color-mix(in srgb, #000 calc(var(--reveal) * 100%), #fff) 100%
     );
     background-size: 300% 100%;
@@ -242,6 +241,13 @@ body {
   border-radius: 50%;
 }
 
+/* --hint nudges the thumb slightly right (registered so it animates smoothly) */
+@property --hint {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+
 /* the one visible, moving dot */
 .dots-thumb {
   position: absolute;
@@ -251,8 +257,24 @@ body {
   height: var(--dot-size);
   border-radius: 50%;
   background: var(--dot-color);
-  transform: translateX(calc(var(--thumb) * var(--slot-step)));
+  transform: translateX(calc(var(--thumb) * var(--slot-step) + var(--hint)));
   transition: background-color 0.45s ease;
+}
+
+/* On the first slide, nudge the thumb right and back — a hint to swipe right. */
+.dots.hint .dots-thumb {
+  animation: thumb-hint 2.4s ease-in-out infinite;
+}
+
+@keyframes thumb-hint {
+  0%   { --hint: 0px; }
+  15%  { --hint: 0.75rem; }
+  30%  { --hint: 0px; }
+  100% { --hint: 0px; }      /* pause, then nudge again */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dots.hint .dots-thumb { animation: none; }
 }
 
 /* On the Repetition slide the thumb breathes with the same --reveal as the

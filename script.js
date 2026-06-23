@@ -43,24 +43,75 @@
     { passive: false }
   );
 
-  /* hand the thumb over to the breathing glow while on Repetition */
+  /* Per-slide thumb states:
+     - glow while on Repetition (breathing halo)
+     - hint (nudge right) while on the intro, suggesting a swipe right */
   if ("IntersectionObserver" in window) {
-    var rep = document.getElementById("repetition");
-    if (rep) {
-      var glowIo = new IntersectionObserver(
-        function (entries) {
-          entries.forEach(function (entry) {
-            nav.classList.toggle(
-              "glow",
-              entry.isIntersecting && entry.intersectionRatio >= 0.55
-            );
-          });
-        },
-        { threshold: 0.55 }
-      );
-      glowIo.observe(rep);
+    var io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          var on = entry.isIntersecting && entry.intersectionRatio >= 0.55;
+          if (entry.target.id === "repetition") nav.classList.toggle("glow", on);
+          if (entry.target.id === "intro") nav.classList.toggle("hint", on);
+        });
+      },
+      { threshold: 0.55 }
+    );
+    ["repetition", "intro"].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) io.observe(el);
+    });
+  }
+})();
+
+/* Fit each part title to exactly span the slide's width. Measures the word's
+   natural width at a base size, then scales font-size to fill the available
+   width (viewport minus the side gutter). Capped so a short word on a wide
+   desktop doesn't grow absurdly tall. */
+(function () {
+  "use strict";
+
+  var titles = document.querySelectorAll(".part-title");
+  if (!titles.length) return;
+
+  function fit() {
+    var cap = window.innerHeight * 0.5; /* don't exceed ~half the viewport */
+    titles.forEach(function (t) {
+      var wrap = t.parentElement;
+      var cs = getComputedStyle(wrap);
+      var avail =
+        wrap.clientWidth -
+        parseFloat(cs.paddingLeft) -
+        parseFloat(cs.paddingRight);
+      if (avail <= 0) return;
+
+      var base = 100;
+      t.style.fontSize = base + "px";
+      t.style.width = "max-content";
+      var natural = t.getBoundingClientRect().width;
+      t.style.width = "";
+      if (natural <= 0) return;
+
+      var size = base * (avail / natural);
+      if (size > cap) size = cap;
+      t.style.fontSize = size + "px";
+    });
+  }
+
+  var ticking = false;
+  function onResize() {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(function () {
+        ticking = false;
+        fit();
+      });
     }
   }
+
+  fit();
+  window.addEventListener("resize", onResize, { passive: true });
+  window.addEventListener("orientationchange", onResize, { passive: true });
 })();
 
 /* REPETITION bolt: run the light-sweep only while the slide is in view, and
