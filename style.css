@@ -1,0 +1,267 @@
+/* ============================================================
+   But why not one turn more? — program notes
+   Minimal. Warning-sign aesthetic: flat color, hard edges,
+   heavy signage sans, no decoration.
+
+   Each <section class="part"> sets its own two colors inline
+   via --bg (background) and --fg (text). Change those two
+   values per part to set the palette. (Currently b/w placeholders.)
+   ============================================================ */
+
+:root {
+  --gutter: 2vw;       /* narrow side margins */
+  --title-gap: clamp(1.6rem, 6vw, 3rem); /* distance from title to text */
+  --maxw: 100%;        /* text runs to the viewport, minus the gutter */
+
+  --intro-bg: #ffffff;
+  --intro-fg: #000000;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  overflow: hidden;             /* the page itself doesn't scroll; .slider does */
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.4;
+  color: var(--intro-fg);
+  background: var(--intro-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* horizontal swipe-style scroller: slides sit side by side, the page scrolls
+   right and snaps one full-screen slide at a time, on every device */
+.slider {
+  display: flex;
+  width: 100vw;
+  height: 100svh;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;        /* hide scrollbar (Firefox) */
+}
+
+.slider::-webkit-scrollbar {
+  display: none;                /* hide scrollbar (WebKit) */
+}
+
+/* shared content column — narrow margins */
+.wrap {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* ---------------- INTRO ---------------- */
+.intro {
+  flex: 0 0 100vw;              /* one full-viewport-wide slide */
+  width: 100vw;
+  height: 100svh;
+  overflow-y: auto;            /* scroll within a slide if content is tall */
+  display: flex;
+  align-items: flex-start;
+  background: var(--intro-bg);
+  color: var(--intro-fg);
+  /* same margin all around, matching the parts */
+  padding-block: var(--gutter);
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.main-title {
+  font-weight: 900;
+  font-size: clamp(3.2rem, 14vw, 6.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  /* gap between title and text */
+  margin-bottom: var(--title-gap);
+}
+
+.lede {
+  font-size: clamp(1.8rem, 5.2vw, 2.4rem);
+  margin-bottom: 1em;
+}
+
+/* ---------------- PARTS ---------------- */
+.part {
+  flex: 0 0 100vw;             /* one full-viewport-wide slide */
+  width: 100vw;
+  height: 100svh;
+  overflow-y: auto;            /* scroll within a slide if content is tall */
+  display: flex;
+  align-items: flex-start;
+  background: var(--bg);
+  color: var(--fg);
+  /* same margin all around: top/bottom gap matches the side gutter */
+  padding-block: var(--gutter);
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.part-title {
+  text-transform: uppercase;
+  font-weight: 900;
+  /* one consistent size for all titles, set so the longest word
+     (REPETITION) still fits the viewport width on phones */
+  font-size: min(14.5vw, 8rem);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  white-space: nowrap;          /* stay on one line */
+  /* gap between title and body */
+  margin-bottom: var(--title-gap);
+}
+
+.body p {
+  font-size: clamp(1.8rem, 5.2vw, 2.4rem);
+  margin-bottom: 1em;
+}
+
+.body p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---- REPETITION: two layered effects ----
+   1) GLOW BREATH: the text slowly breathes from concrete black (no glow) to a
+      near-invisible white afterimage and back, driven by --reveal on :root.
+   2) BOLT: a light streak (--bolt, from the slide's palette) sweeps across all
+      the text on arrival, then repeats every few seconds.
+   The breath rides in the gradient's base colour; the bolt is the bright stop
+   that travels through it. The glow is a breathing text-shadow. */
+
+/* --reveal is registered so it interpolates smoothly when animated. */
+@property --reveal {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 1;
+}
+
+:root {
+  --reveal: 1;
+  animation: reveal-breath 9s ease-in-out infinite;
+}
+
+@keyframes reveal-breath {
+  0%, 100% { --reveal: 1; }     /* black, no glow */
+  50%      { --reveal: 0.1; }   /* near-white glow */
+}
+
+#repetition .part-title,
+#repetition .body p {
+  color: var(--fg);                       /* fallback if text-clip unsupported */
+  /* breathing glow — opacity grows as --reveal drops toward 0 */
+  text-shadow:
+    -4px 3px 16px rgb(0 0 0 / calc((1 - var(--reveal)) * 0.13)),
+     7px 8px 38px rgb(0 0 0 / calc((1 - var(--reveal)) * 0.07));
+}
+
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  #repetition .part-title,
+  #repetition .body p {
+    color: transparent;
+    /* A single (non-repeating) wide gradient: the base colour fills both ends
+       and a soft bright wave sits in the middle. Because both ends are base,
+       sliding from one edge to the other passes the wave through once and the
+       loop wraps base->base, with no visible snap. Base breathes via --reveal. */
+    background-image: linear-gradient(
+      100deg,
+      color-mix(in srgb, #000 calc(var(--reveal) * 100%), #fff) 0%,
+      color-mix(in srgb, #000 calc(var(--reveal) * 100%), #fff) 32%,
+      var(--bolt) 50%,
+      color-mix(in srgb, #000 calc(var(--reveal) * 100%), #fff) 68%,
+      color-mix(in srgb, #000 calc(var(--reveal) * 100%), #fff) 100%
+    );
+    background-size: 300% 100%;
+    background-repeat: no-repeat;
+    background-position: 0% 0;             /* parked: showing base, no wave */
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  /* a slow, soft wave of light glides across, smoothly (high fps).
+     ease-in-out slows it to a soft pause at each (blank) end, so the loop
+     seam is blank->blank with ~0 velocity: no hold, no jump.
+     runs only while the slide is in view (class toggled by JS) */
+  #repetition.lit .part-title,
+  #repetition.lit .body p {
+    animation: bolt 11s ease-in-out infinite;
+  }
+  #repetition.lit .body p {
+    animation-delay: 0.6s;                 /* wave reaches the title, then the body */
+  }
+}
+
+@keyframes bolt {
+  0%   { background-position: 0% 0; }     /* base end (blank) */
+  100% { background-position: 100% 0; }   /* base end (blank); seam wraps cleanly */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { animation: none; }
+  #repetition.lit .part-title,
+  #repetition.lit .body p { animation: none; }
+}
+
+/* ---------------- SLIDE INDICATOR ----------------
+   A single dot (the "thumb") glides along four slot positions. Its position
+   (--thumb, 0..3) is driven continuously by scroll, so it moves with the
+   sticky-scroll snap rather than blinking between slots.
+   --slot-step must equal one slot's width + the gap. */
+.dots {
+  --dot-color: #000;
+  --thumb: 0;
+  --dot-size: 1.25rem;
+  --dot-gap: 1.2rem;
+  --slot-step: calc(var(--dot-size) + var(--dot-gap));
+  position: fixed;
+  left: 50%;
+  bottom: var(--gutter);
+  transform: translateX(-50%);
+  display: flex;
+  gap: var(--dot-gap);
+  z-index: 100;
+}
+
+/* invisible click/tap targets, one per slide */
+.dot-slot {
+  width: var(--dot-size);
+  height: var(--dot-size);
+  border-radius: 50%;
+}
+
+/* the one visible, moving dot */
+.dots-thumb {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: var(--dot-size);
+  height: var(--dot-size);
+  border-radius: 50%;
+  background: var(--dot-color);
+  transform: translateX(calc(var(--thumb) * var(--slot-step)));
+  transition: background-color 0.45s ease;
+}
+
+/* On the Repetition slide the thumb breathes with the same --reveal as the
+   text: black <-> near-white, with a glow halo. */
+.dots.glow .dots-thumb {
+  background: color-mix(in srgb, #000 calc(var(--reveal) * 100%), #fff);
+  transition: none;
+  box-shadow:
+    -4px 3px 16px rgb(0 0 0 / calc((1 - var(--reveal)) * 0.13)),
+     7px 8px 38px rgb(0 0 0 / calc((1 - var(--reveal)) * 0.07));
+}
+
