@@ -113,6 +113,8 @@ body {
 .part-title {
   text-transform: uppercase;
   font-weight: 900;
+  /* 900 is Helvetica's heaviest; a same-colour stroke fattens it further */
+  -webkit-text-stroke: 0.022em var(--fg);
   /* one consistent size for all titles, set so the longest word
      (REPETITION) still fits the viewport width on phones */
   font-size: min(14.5vw, 8rem);
@@ -164,6 +166,11 @@ body {
   text-shadow:
     -4px 3px 16px rgb(0 0 0 / calc((1 - var(--reveal)) * 0.13)),
      7px 8px 38px rgb(0 0 0 / calc((1 - var(--reveal)) * 0.07));
+}
+
+/* no stroke on the Repetition title — it conflicts with the wave/glow fill */
+#repetition .part-title {
+  -webkit-text-stroke: 0;
 }
 
 @supports ((-webkit-background-clip: text) or (background-clip: text)) {

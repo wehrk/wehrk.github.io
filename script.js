@@ -112,6 +112,10 @@
   fit();
   window.addEventListener("resize", onResize, { passive: true });
   window.addEventListener("orientationchange", onResize, { passive: true });
+  /* refit once custom fonts (e.g. Pouf) have loaded — they change metrics */
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(fit);
+  }
 })();
 
 /* REPETITION bolt: run the light-sweep only while the slide is in view, and
