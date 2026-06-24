@@ -44,8 +44,8 @@
   );
 
   /* Per-slide thumb states:
-     - glow while on Repetition (breathing halo)
-     - hint (nudge right) while on the intro, suggesting a swipe right */
+     - hint (nudge right) while on the intro, suggesting a swipe right
+     - glow while on Repetition (breathing halo) */
   if ("IntersectionObserver" in window) {
     var io = new IntersectionObserver(
       function (entries) {
